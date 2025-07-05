@@ -2,10 +2,7 @@
 
 這是一個循序漸進的 Leaflet.js 學習專案，包含了從基礎地圖建立到進階功能的 HTML 範例檔案。每個檔案（`DAY_XX.html`）都專注於一個或多個特定的主題，旨在展示 Leaflet 的各種功能。
 
-## 參考資料
-
-本專案中的範例程式碼主要參考自 **塔塔墨** 的 [iThome 鐵人賽系列文章](https://ithelp.ithome.com.tw/m/users/20112552/ironman/2074)：
--   Leaflet.js 從零開始
+本專案中的範例程式碼主要參考自 **塔塔墨** 的 iThome 鐵人賽系列文章：[使用Leaflet及Folium開啟網頁地圖大門](https://ithelp.ithome.com.tw/m/users/20112552/ironman/2074)
 
 ## 如何使用
 
@@ -75,6 +72,5 @@
 [Maso的萬事屋](https://www.youtube.com/playlist?list=PLG4d6NSc7_l5-GjYiCdYa7H5Wsz0oQA7U)<br>
 或加LINE私下交流 LINE ID: mastermaso<br>
 ![LOGO](https://yt3.ggpht.com/ytc/AKedOLR7I7tw_IxwJRgso1sT4paNu2s6_4hMw2goyDdrYQ=s88-c-k-c0x00ffffff-no-rj)<br>
-
 
 ====================================<br>
