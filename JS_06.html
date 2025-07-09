@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>倒數計時與互動提示</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timer-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    h2 {
+      color: #1976d2;
+    }
+
+    .count {
+      font-size: 48px;
+      margin: 20px 0;
+      color: #d32f2f;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #finalMessage {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #00695c;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>倒數計時器</h2>
+
+  <div class="timer-box">
+    <div class="count" id="countDisplay">10</div>
+    <button onclick="startCountdown()">開始倒數</button>
+    <div id="finalMessage"></div>
+  </div>
+
+  <script>
+    let timer = null;
+    let count = 10;
+
+    function startCountdown() {
+      // 重設計數與訊息
+      clearInterval(timer);
+      count = 10;
+      document.getElementById("countDisplay").textContent = count;
+      document.getElementById("finalMessage").textContent = "";
+
+      // 每秒倒數一次
+      timer = setInterval(() => {
+        count--;
+        document.getElementById("countDisplay").textContent = count;
+
+        if (count === 0) {
+          clearInterval(timer);
+          // 使用 setTimeout 顯示訊息
+          setTimeout(() => {
+            document.getElementById("finalMessage").textContent = "⏰ 時間到囉！";
+          }, 500);
+        }
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- 
+| 語法 / 方法           | 說明                            
+| ----------------- | ----------------------------- 
+| `setInterval()`   | 每隔指定毫秒執行一次，用來實作倒數邏輯           
+| `clearInterval()` | 停止倒數計時                        
+| `setTimeout()`    | 延遲執行某段程式（如顯示訊息）               
+| `textContent`     | 修改畫面中數字與文字                    
+| `onclick`         | 按下按鈕時觸發 `startCountdown()` 函式 
+-->

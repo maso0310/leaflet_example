@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>按鈕樣式與 hover 效果</title>
+    <style>
+        .my-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .my-button:hover {
+            background-color: #388E3C;
+            transform: scale(1.05);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .center {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>按鈕 hover 效果示範</h1>
+
+    <div class="center">
+        <button class="my-button">滑鼠移到這裡</button>
+    </div>
+
+</body>
+</html>
+
+<!-- 
+| 屬性/語法                    | 說明                          
+| ------------------------ | --------------------------- 
+| `.my-button`             | 自訂按鈕樣式，背景色、文字顏色、邊框、內距與滑鼠指標。 
+| `:hover`                 | 滑鼠移到元素上時觸發的樣式變化。            
+| `transition`             | 讓樣式變化「漸變」而不是瞬間發生，提升視覺體驗。    
+| `transform: scale(1.05)` | 鼠標滑過時讓按鈕稍微放大，強化互動感。         
+-->

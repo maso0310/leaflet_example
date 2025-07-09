@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex 排版練習</title>
+    <style>
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 2px solid #333;
+            height: auto; /* 建議改為 auto，避免固定高度擠壓換行效果 */
+            background-color: #f9f9f9;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .flex-item {
+            width: 30%;
+            background-color: #add8e6;
+            padding: 20px;
+            border: 1px solid #666;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flex 排版練習</h1>
+
+    <div class="flex-container">
+        <div class="flex-item">項目 1</div>
+        <div class="flex-item">項目 2</div>
+        <div class="flex-item">項目 3</div>
+        <div class="flex-item">項目 4</div>
+        <div class="flex-item">項目 5</div>
+        <div class="flex-item">項目 6</div>
+    </div>
+
+</body>
+</html>
+
+<!-- 
+| 屬性                              | 功能說明                                                             
+| ------------------------------- | ----------------------------------------------------------------- 
+| `display: flex`                 | 啟用 Flexbox 模式，子元素將自動排成一排（水平）                         
+| `justify-content: space-around` | 水平分散對齊，每個項目左右會有平均間距                                   
+| `align-items: center`           | 垂直方向置中對齊，需搭配容器高度才能看出效果                                 
+| `gap`                           | Flex 子項目之間的間距（包含換行後的上下距離）                             
+| `width: 30%`                    | 每個項目固定寬度為 30%，可與 `flex-wrap: wrap` 搭配實現換行排版            
+| `flex-wrap: wrap`              | 允許子項目在容器寬度不足時自動換行到下一列。             
+
+-->

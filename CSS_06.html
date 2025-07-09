@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>響應式排版範例</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #e0f7fa;
+            padding: 20px;
+            border: 2px solid #00796b;
+            font-size: 20px;
+        }
+
+        .title {
+            text-align: center;
+            color: #00796b;
+        }
+
+        /* ✅ 手機（max-width: 600px） */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 95%;
+                font-size: 16px;
+                background-color: #fce4ec;
+                border-color: #c2185b;
+            }
+            .title {
+                color: #c2185b;
+            }
+        }
+
+        /* ✅ 平板（max-width: 960px） */
+        @media screen and (max-width: 960px) and (min-width: 601px) {
+            .container {
+                width: 90%;
+                font-size: 18px;
+                background-color: #fffde7;
+                border-color: #fbc02d;
+            }
+            .title {
+                color: #f57f17;
+            }
+        }
+
+        /* ✅ 筆電中寬螢幕（max-width: 1200px） */
+        @media screen and (max-width: 1200px) and (min-width: 961px) {
+            .container {
+                width: 85%;
+                background-color: #e8f5e9;
+                border-color: #388e3c;
+            }
+            .title {
+                color: #2e7d32;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">響應式設計練習</h1>
+        <p>請嘗試縮小瀏覽器畫面或用手機預覽，看看區塊寬度、顏色與文字大小是否有變化。</p>
+    </div>
+
+</body>
+</html>
+
+
+<!-- 
+| 語法/屬性                                  | 說明                            
+| -------------------------------------- | ----------------------------- 
+| `@media screen and (max-width: 600px)` | 當裝置的寬度小於等於 600px（手機寬度）時才套用樣式。 
+| `font-size`、`width`                    | 手機畫面上文字會變小、寬度放寬以適應小螢幕。        
+| `background-color`、`border-color`      | 設計明顯對比，方便學生觀察切換效果。            
+-->

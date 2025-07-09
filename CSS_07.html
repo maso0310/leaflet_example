@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>Grid 網格排版範例</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 三欄平均寬度 */
+      gap: 20px;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .grid-item {
+      background-color: #90caf9;
+      border: 2px solid #1976d2;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1976d2;
+    }
+
+    /* ✅ 響應式：手機變一欄 */
+    @media screen and (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ✅ 平板：變成兩欄 */
+    @media screen and (max-width: 960px) and (min-width: 601px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Grid 網格排版練習</h1>
+
+  <div class="grid-container">
+    <div class="grid-item">項目 1</div>
+    <div class="grid-item">項目 2</div>
+    <div class="grid-item">項目 3</div>
+    <div class="grid-item">項目 4</div>
+    <div class="grid-item">項目 5</div>
+    <div class="grid-item">項目 6</div>
+  </div>
+
+</body>
+</html>
+
+<!-- 
+| 屬性                                      | 功能說明           
+| --------------------------------------- | -------------- 
+| `display: grid`                         | 啟用 Grid 排版系統   
+| `grid-template-columns: repeat(3, 1fr)` | 建立 3 欄，寬度平均    
+| `gap`                                   | 控制網格間距         
+| `@media`                                | 響應式欄位變化（手機/平板） 
+-->

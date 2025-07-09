@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>基本 DOM 操作</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      padding: 40px;
+    }
+
+    h2 {
+      color: #1976d2;
+    }
+
+    .block {
+      margin-bottom: 25px;
+    }
+
+    .highlight {
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 10px;
+      border: 1px solid #ffeeba;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    .box-style {
+      background-color: #aed581;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .code-tip {
+      font-family: monospace;
+      background-color: #eceff1;
+      padding: 5px 10px;
+      border-left: 4px solid #90a4ae;
+      margin-top: 8px;
+      color: #37474f;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>基本 DOM 操作：語法對應範例</h2>
+
+  <div class="block">
+    <p id="info">這段文字會被 JavaScript 修改</p>
+    <button onclick="modifyText()">修改段落文字</button>
+    <div class="code-tip">document.getElementById("info").textContent = "..."</div>
+  </div>
+
+  <div class="block">
+    <div id="box">🔵 我是方塊區塊</div>
+    <button onclick="modifyStyle()">改變樣式</button>
+    <div class="code-tip">document.querySelector("#box").style.backgroundColor = "..."</div>
+  </div>
+
+  <div class="block">
+    <p class="extra">這是額外段落</p>
+    <button onclick="insertHTML()">插入 HTML</button>
+    <div class="code-tip">document.querySelector(".extra").innerHTML = "..."</div>
+  </div>
+
+  <script>
+    function modifyText() {
+      const paragraph = document.getElementById("info");
+      paragraph.textContent = "✅ 這段文字已經更新";
+      paragraph.classList.add("highlight");
+    }
+
+    function modifyStyle() {
+      const box = document.querySelector("#box");
+      box.classList.add("box-style");
+      box.textContent = "✅ 樣式已套用！";
+    }
+
+    function insertHTML() {
+      const extra = document.querySelector(".extra");
+      extra.innerHTML = "<strong>✅ 粗體 HTML 內容已插入！</strong>";
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- 
+| 功能區塊   | 對應語法               | 操作方式                                      
+| ------ | ------------------ | ----------------------------------------- 
+| 段落文字   | `getElementById()` | 取得元素並修改 `textContent`                     
+| 區塊樣式   | `querySelector()`  | 修改樣式 `style.property` 與 `classList.add()` 
+| HTML插入 | `querySelector()`  | 修改 `innerHTML` 插入標籤內容                     
+-->

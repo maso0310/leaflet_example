@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>表單元素介紹</title>
+</head>
+<body>
+
+    <h1>表單欄位與控制元件</h1>
+
+    <!-- 不需搭配 form 也能單獨展示表單元素 -->
+
+    <!-- 單行輸入欄位 -->
+    <h2>輸入姓名：</h2>
+    <input type="text" placeholder="請輸入您的姓名">
+
+    <!-- 密碼欄位 -->
+    <h2>輸入密碼：</h2>
+    <input type="password" placeholder="請輸入密碼">
+
+    <!-- 數字欄位 -->
+    <h2>輸入年齡：</h2>
+    <input type="number" min="0" max="120">
+
+    <!-- 多行文字 -->
+    <h2>留言內容：</h2>
+    <textarea rows="5" cols="30" placeholder="請輸入留言..."></textarea>
+
+    <!-- 下拉選單 -->
+    <h2>選擇您喜歡的顏色：</h2>
+    <select>
+        <option value="">-- 請選擇 --</option>
+        <option value="red">紅色</option>
+        <option value="blue">藍色</option>
+        <option value="green">綠色</option>
+    </select>
+
+    <!-- 按鈕元素 -->
+    <h2>送出按鈕與一般按鈕</h2>
+    <p>
+        <button type="submit">送出資料</button>
+        <button type="button" onclick="alert('你點了按鈕！')">點我一下</button>
+    </p>
+
+</body>
+</html>
+
+<!-- 
+| 標籤                        | 用途                       
+| ------------------------- | ------------------------ 
+| `<input type="text">`     | 單行文字輸入。                  
+| `<input type="password">` | 密碼輸入，會以圓點遮蔽。             
+| `<input type="number">`   | 數值輸入，可設定範圍。              
+| `<textarea>`              | 多行文字輸入，適合留言或描述欄。         
+| `<select>` / `<option>`   | 下拉式選單，用來選擇其中一個項目。        
+| `<button type="submit">`  | 送出用按鈕（常搭配 `<form>`）。     
+| `<button type="button">`  | 單純按鈕，適合加上 JavaScript 行為。 
+-->

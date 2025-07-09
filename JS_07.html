@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>暱稱記憶系統</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .box {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: auto;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1976d2;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #125aa0;
+    }
+
+    #welcome {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>歡迎光臨！</h2>
+
+  <div class="box">
+    <label for="nickname">請輸入你的暱稱：</label>
+    <input type="text" id="nickname" placeholder="例如：小明" />
+    <br />
+    <button onclick="saveNickname()">儲存暱稱</button>
+    <button onclick="clearNickname()">清除暱稱</button>
+
+    <div id="welcome"></div>
+  </div>
+
+  <script>
+    // 頁面載入時自動檢查 localStorage
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedName = localStorage.getItem("nickname");
+      if (savedName) {
+        document.getElementById("welcome").textContent = `👋 歡迎回來，${savedName}！`;
+      }
+    });
+
+    function saveNickname() {
+      const input = document.getElementById("nickname");
+      const name = input.value.trim();
+
+      if (name === "") {
+        alert("請輸入有效的暱稱！");
+        return;
+      }
+
+      localStorage.setItem("nickname", name);
+      document.getElementById("welcome").textContent = `✅ 暱稱已儲存，歡迎你，${name}！`;
+      input.value = "";
+    }
+
+    function clearNickname() {
+      localStorage.removeItem("nickname");
+      document.getElementById("welcome").textContent = "❌ 暱稱已清除，請重新輸入。";
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- 
+| 語法                          | 功能說明                 
+| --------------------------- | -------------------- 
+| `localStorage.setItem()`    | 將資料（字串）儲存到本地端瀏覽器     
+| `localStorage.getItem()`    | 取得先前儲存的資料（若有）        
+| `localStorage.removeItem()` | 刪除指定資料               
+| `window.addEventListener()` | 監聽頁面載入事件，實作初始化流程     
+| `.trim()`                   | 移除輸入字串的前後空白，避免誤存空白內容 
+-->

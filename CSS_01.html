@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 選擇器範例</title>
+
+    <!-- CSS 直接寫在 <style> 區塊中 -->
+    <style>
+        /* 元素選擇器：針對所有 <h1> 套用樣式 */
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        /* 類別選擇器（class）：前面加 . */
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+        /* ID 選擇器：前面加 #，僅套用在特定 id */
+        #important {
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS 選擇器示範</h1>
+
+    <p>這是一段普通的段落文字。</p>
+
+    <p class="highlight">這一段使用了 class 選擇器 <code>.highlight</code>。</p>
+
+    <p id="important">這一段使用了 ID 選擇器 <code>#important</code>。</p>
+
+</body>
+</html>
+
+
+<!-- 
+
+    | 語法           | 用途說明                      
+| ------------ | ------------------------- 
+| `<style>`    | 將 CSS 寫在 HTML 頁面中（內嵌樣式）。  
+| `h1 { ... }` | 元素選擇器，影響所有該標籤。            
+| `.highlight` | 類別選擇器，用於多個元素共用樣式。         
+| `#important` | ID 選擇器，針對特定元素（每個 ID 應唯一）。 
+
+-->

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>陣列與迴圈處理</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      padding: 40px;
+    }
+    h2 {
+      color: #1976d2;
+    }
+    ul {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+    }
+    li {
+      padding: 6px 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>學生名單顯示</h2>
+  <ul id="studentList"></ul>
+
+  <script>
+    // ✅ 宣告陣列
+    const students = ["小明", "小美", "阿強", "阿花", "志明"];
+
+    // ✅ 取得 UL 元素
+    const listElement = document.getElementById("studentList");
+
+    // ✅ 使用 forEach 將學生加入清單中
+    students.forEach(function(name, index) {
+      const li = document.createElement("li");
+      li.textContent = `${index + 1}. ${name}`;
+      listElement.appendChild(li);
+    });
+
+    // 你也可以改用 for 迴圈（補充寫法）
+    /*
+    for (let i = 0; i < students.length; i++) {
+      const li = document.createElement("li");
+      li.textContent = `${i + 1}. ${students[i]}`;
+      listElement.appendChild(li);
+    }
+    */
+  </script>
+
+</body>
+</html>
+
+
+<!-- 
+| 語法 / 方法                    | 功能說明                 
+| -------------------------- | -------------------- 
+| `[]`                       | 宣告一個陣列               
+| `for`                      | 傳統迴圈寫法，用於重複動作        
+| `forEach(callback)`        | 現代化迴圈寫法，針對陣列每個元素執行函式 
+| `document.createElement()` | 建立新的 HTML 元素         
+| `appendChild()`            | 將元素加入至指定的父層元素        
+-->

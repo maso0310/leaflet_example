@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>表單送出範例</title>
+</head>
+<body>
+
+    <h1>聯絡我們表單</h1>
+
+    <!-- 表單開始 -->
+    <form action="https://httpbin.org/post" method="POST">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">電子信箱：</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">留言內容：</label><br>
+        <textarea id="message" name="message" rows="4" cols="40" required></textarea><br><br>
+
+        <!-- 提交按鈕 -->
+        <button type="submit">送出表單</button>
+    </form>
+
+    <p>這個表單會將資料 POST 到 <code>https://httpbin.org/post</code>，可作為測試用途。</p>
+
+</body>
+</html>
+
+<!-- 
+| 屬性/標籤                    | 說明                                     
+| ------------------------ | -------------------------------------- 
+| `<form>`                 | 包裹整個表單欄位的容器，具有送出行為。                    
+| `action="..."`           | 指定送出的目的地網址（通常是後端伺服器）。                  
+| `method="POST"`          | 表單送出方式，常見為 `GET`（網址顯示資料）與 `POST`（較安全）。 
+| `<button type="submit">` | 送出表單的按鈕。會觸發 `<form>` 的提交行為。            
+| `required`               | 表示該欄位為必填。HTML5 的欄位驗證功能。                
+
+https://httpbin.org/post 是一個 免費提供的測試用 API，由 httpbin.org 提供。它的作用是：
+✅ 接收你透過 POST 方法送出的表單資料，然後回傳一份 JSON 結構的「你送了什麼」報告給你看。
+
+這非常適合用來：
+練習 HTML 表單送出（無需自己建立後端）
+確認表單資料格式是否正確
+學習 GET、POST 等 HTTP 方法的差異
+-->

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 盒模型與陰影</title>
+
+    <style>
+        .card {
+            width: 300px;
+            border: 2px solid #999;
+            padding: 20px;
+            margin: 30px auto;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            background-color: #fff8dc;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>盒模型示範區塊</h2>
+        <p>這個區塊有外距（margin）、內距（padding）與陰影（box-shadow）。</p>
+    </div>
+
+</body>
+</html>
+
+
+<!-- 
+| CSS 屬性       | 說明                       
+| ------------ | ------------------------ 
+| `margin`     | 區塊「外部空間」，控制與其他元素的距離。     
+| `padding`    | 區塊「內部空間」，控制內容與邊框的距離。     
+| `border`     | 邊框，可設定粗細、樣式、顏色（輔助觀察盒子）。  
+| `box-shadow` | 陰影效果，常用於卡片、彈窗、按鈕等視覺層次設計。 
+-->

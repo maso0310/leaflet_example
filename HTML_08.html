@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>活動報名表單</title>
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <!-- 頁首區域 -->
+        <header>
+            <h1>2025 前端入門體驗營</h1>
+            <p><strong>免費參加</strong>、名額有限，歡迎報名參加！</p>
+        </header>
+
+        <!-- 活動資訊區 -->
+        <section>
+            <h2>活動資訊</h2>
+            <ul>
+                <li>日期：2025年 8 月 15 日（星期五）</li>
+                <li>地點：台北市信義區遠東創新館</li>
+                <li>對象：對網頁設計有興趣的初學者</li>
+            </ul>
+            <img src="https://t3.ftcdn.net/jpg/00/72/98/56/360_F_72985676_cO09AqHv6cK2o8pbNm8tvl3glfzSGgZi.jpg" alt="活動現場照片">
+        </section>
+
+        <!-- 報名表單區 -->
+        <section>
+            <h2>報名表單</h2>
+            <form action="https://httpbin.org/post" method="POST">
+                <p>
+                    姓名：<br>
+                    <input type="text" name="name" placeholder="請輸入您的姓名">
+                </p>
+                <p>
+                    電子信箱：<br>
+                    <input type="email" name="email" placeholder="example@email.com">
+                </p>
+                <p>
+                    選擇課程主題：<br>
+                    <select name="topic">
+                        <option value="html">HTML 入門</option>
+                        <option value="css">CSS 樣式</option>
+                        <option value="js">JavaScript 初階</option>
+                    </select>
+                </p>
+                <p>
+                    自我介紹：<br>
+                    <textarea name="intro" rows="4" cols="40" placeholder="請簡單介紹自己..."></textarea>
+                </p>
+                <p>
+                    <button type="submit">送出報名</button>
+                </p>
+            </form>
+        </section>
+
+        <!-- 活動回顧表格（示意） -->
+        <section>
+            <h2>歷屆活動回顧</h2>
+            <table border="1">
+                <tr>
+                    <th>年度</th>
+                    <th>地點</th>
+                    <th>參與人數</th>
+                </tr>
+                <tr>
+                    <td>2023</td>
+                    <td>台中</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td>2024</td>
+                    <td>高雄</td>
+                    <td>60</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 頁尾區域 -->
+        <footer>
+            <p>聯絡信箱：info@webcamp.tw</p>
+            <p>主辦單位：網頁設計初學者社群</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>卡片樣式實作</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #333;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .card {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        background-color: white;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .card-description {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .card-button {
+      display: block;
+      margin: 16px;
+      padding: 10px;
+      background-color: #1976d2;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .card-button:hover {
+      background-color: #125aa0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center; color:#1976d2;">卡片樣式練習</h1>
+
+  <div class="card-container">
+    <div class="card">
+      <img src="https://static.vecteezy.com/system/resources/previews/001/416/705/non_2x/html5-emblem-orange-shield-and-white-text-vector.jpg" alt="圖片1">
+      <div class="card-content">
+        <div class="card-title">HTML 入門</div>
+        <div class="card-description">學習如何建立網頁的基本結構與內容。</div>
+      </div>
+      <a class="card-button" href="#">了解更多</a>
+    </div>
+
+    <div class="card">
+      <img src="https://ralfvanveen.com/wp-content/uploads/2021/06/CSS-_-Glossary.svg" alt="圖片2">
+      <div class="card-content">
+        <div class="card-title">CSS 美化</div>
+        <div class="card-description">學習設計網頁樣式與版面排版技巧。</div>
+      </div>
+      <a class="card-button" href="#">了解更多</a>
+    </div>
+
+    <div class="card">
+      <img src="https://www.stickersdevs.com.br/wp-content/uploads/2017/04/js_escudo-adesivo-stickers-devs.png" alt="圖片3">
+      <div class="card-content">
+        <div class="card-title">JavaScript 初探</div>
+        <div class="card-description">學會用 JS 增加互動功能與簡單動畫。</div>
+      </div>
+      <a class="card-button" href="#">了解更多</a>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+<!-- 
+| 元素 / 屬性                         | 用途說明       
+| ------------------------------- | ---------- 
+| `.card`                         | 卡片主體區塊     
+| `box-shadow`                    | 卡片陰影立體感    
+| `transition + :hover`           | 滑鼠懸停效果     
+| `.card-container` + `flex-wrap` | 多張卡片自動換行排列 
+| `.card-button`                  | 行動按鈕樣式與互動  
+-->

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>變數與資料型別</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f0f8ff;
+    }
+    pre {
+      background-color: #fff;
+      border-left: 4px solid #1976d2;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>變數與資料型別</h1>
+
+  <p>打開 F12 → Console，觀察以下程式輸出：</p>
+
+  <pre><code>
+var name = "小明";
+var age = 18;
+var isStudent = true;
+
+console.log(name);            // 小明
+console.log(typeof name);     // string
+
+console.log(age);             // 18
+console.log(typeof age);      // number
+
+console.log(isStudent);       // true
+console.log(typeof isStudent);// boolean
+  </code></pre>
+
+  <script>
+    var name = "小明";
+    var age = 18;
+    var isStudent = true;
+
+    console.log(name);            // 小明
+    console.log(typeof name);     // string
+
+    console.log(age);             // 18
+    console.log(typeof age);      // number
+
+    console.log(isStudent);       // true
+    console.log(typeof isStudent);// boolean
+  </script>
+
+</body>
+</html>
+
+<!-- 
+| 語法       | 說明             
+| -------- | -------------- 
+| `let`    | 宣告可變的變數（可重新賦值） 
+| `const`  | 宣告常數（不可重新賦值）   
+| `typeof` | 檢查變數的資料型別      
+| `<pre>`  | 保留**原始格式**（空格、換行）的區塊元素，常用於顯示程式碼或文字排版。         
+| `<code>` | 表示**程式碼內容**的行內元素，通常搭配 `<pre>` 使用以呈現可閱讀的程式碼區塊。 
+-->

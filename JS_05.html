@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>表單事件處理</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    label {
+      margin-top: 15px;
+      display: block;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #00695c;
+      text-align: center;
+    }
+
+    .hint {
+      font-size: 14px;
+      color: #555;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>註冊表單</h2>
+
+  <form id="registerForm">
+    <label for="username">使用者名稱：</label>
+    <input type="text" id="username" name="username" required />
+    <div id="nameHint" class="hint"></div>
+
+    <label for="role">選擇身分：</label>
+    <select id="role" name="role">
+      <option value="student">學生</option>
+      <option value="teacher">老師</option>
+    </select>
+    <div id="roleHint" class="hint"></div>
+
+    <button type="submit">送出表單</button>
+  </form>
+
+  <div id="output"></div>
+
+  <script>
+    const form = document.getElementById("registerForm");
+    const usernameInput = document.getElementById("username");
+    const roleSelect = document.getElementById("role");
+    const output = document.getElementById("output");
+    const nameHint = document.getElementById("nameHint");
+    const roleHint = document.getElementById("roleHint");
+
+    // ✅ 監聽表單提交
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // 防止預設刷新行為
+
+      const name = usernameInput.value.trim();
+      const role = roleSelect.value;
+
+      if (name === "") {
+        output.textContent = "❌ 使用者名稱不可為空！";
+        output.style.color = "red";
+      } else {
+        output.textContent = `✅ 使用者 ${name} 註冊成功，身分為 ${role}`;
+        output.style.color = "#2e7d32";
+      }
+    });
+
+    // ✅ 監聽使用者名稱輸入
+    usernameInput.addEventListener("input", function() {
+      const name = usernameInput.value.trim();
+      if (name.length < 3) {
+        nameHint.textContent = "使用者名稱至少需 3 個字元";
+      } else {
+        nameHint.textContent = "✔️ 格式正確";
+      }
+    });
+
+    // ✅ 監聽選單變更
+    roleSelect.addEventListener("change", function() {
+      const role = roleSelect.value;
+      roleHint.textContent = `你選擇的是「${role === 'student' ? '學生' : '老師'}」`;
+    });
+  </script>
+
+</body>
+</html>
+
+
+<!-- 
+| 功能           | 使用語法 / 方法                                       
+| ------------ | ----------------------------------------------- 
+| 表單提交事件處理     | `form.addEventListener('submit', e => {...})`   
+| 阻止刷新頁面       | `e.preventDefault()`                            
+| 表單輸入即時驗證（文字） | `input.addEventListener('input', e => {...})`   
+| 下拉選單變更處理     | `select.addEventListener('change', e => {...})` 
+| 字串修整         | `trim()`                                        
+-->

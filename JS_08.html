@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>互動式待辦清單</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fbe7;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+      width: 70%;
+      padding: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      background-color: #43a047;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2e7d32;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    li {
+      background-color: #e8f5e9;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .delete-btn {
+      background-color: #e53935;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .delete-btn:hover {
+      background-color: #b71c1c;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📋 我的待辦清單</h2>
+
+  <div class="container">
+    <input type="text" id="taskInput" placeholder="請輸入待辦事項..." />
+    <button onclick="addTask()">新增</button>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script>
+    let tasks = [];
+
+    // ✅ 初始化：從 localStorage 讀取資料
+    window.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("tasks");
+      if (saved) {
+        tasks = JSON.parse(saved);
+        renderTasks();
+      }
+    });
+
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const text = input.value.trim();
+
+      if (text === "") {
+        alert("請輸入內容！");
+        return;
+      }
+
+      tasks.push(text);
+      input.value = "";
+      updateStorage();
+      renderTasks();
+    }
+
+    function deleteTask(index) {
+      tasks.splice(index, 1);
+      updateStorage();
+      renderTasks();
+    }
+
+    function updateStorage() {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function renderTasks() {
+      const list = document.getElementById("taskList");
+      list.innerHTML = "";
+
+      tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+        li.textContent = task;
+
+        const btn = document.createElement("button");
+        btn.textContent = "刪除";
+        btn.className = "delete-btn";
+        btn.onclick = () => deleteTask(index);
+
+        li.appendChild(btn);
+        list.appendChild(li);
+      });
+    }
+  </script>
+
+</body>
+</html>
+
+<!-- 
+| 技術                    | 功能說明                  
+| --------------------- | ----------------------
+| `input.value`         | 取得使用者輸入               
+| `push()` / `splice()` | 操作陣列新增與刪除項目           
+| `localStorage`        | 資料儲存與讀取               
+| `JSON.stringify()`    | 將陣列轉為字串存入 localStorage
+| `JSON.parse()`        | 將儲存字串轉回陣列             
+| `createElement()`     | 動態建立 DOM 元素           
+| `addEventListener`    | 頁面載入事件監聽、初始化任務清單      
+-->

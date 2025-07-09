@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 顏色、字型與背景</title>
+
+    <style>
+        /* 整體頁面背景 */
+        body {
+            background-color: #f0f8ff;
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+        }
+
+        /* 標題顏色 */
+        h1 {
+            color: darkgreen;
+        }
+
+        /* 段落文字樣式 */
+        p {
+            color: #333333;
+            font-size: 16px;
+        }
+
+        /* 背景示意區塊 */
+        .box {
+            background-color: lightyellow;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        /* 可選：圖片背景（需網路圖片） */
+        .banner {
+            background-image: url("https://t3.ftcdn.net/jpg/04/07/94/80/360_F_407948043_jQmE5tGWLjXKdsewjvfLttgPAjKeqSmP.jpg");
+            background-size: cover;
+            color: black;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>歡迎來到 CSS 世界</h1>
+
+    <p>這段文字使用了自訂的文字顏色與字型。</p>
+
+    <div class="box">
+        <p>這是一個帶有背景色的區塊。</p>
+    </div>
+
+    <div class="banner">
+        <h2>這是有圖片背景的區塊</h2>
+        <p>使用 background-image 製作視覺吸引的效果。</p>
+    </div>
+
+</body>
+</html>
+
+<!-- 
+| CSS 屬性             | 說明                                     
+| ------------------ | -------------------------------------- 
+| `color`            | 設定文字顏色，可使用色碼或英文名稱。                     
+| `font-family`      | 設定字型，建議中英文備用字型一起列出。                    
+| `background-color` | 區塊的背景色。                                
+| `background-image` | 使用圖片作為背景，可搭配 `background-size: cover`。 
+-->
